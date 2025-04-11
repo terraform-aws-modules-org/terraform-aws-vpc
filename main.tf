@@ -138,7 +138,7 @@ resource "aws_eip" "nat_eip" {
 
 resource "aws_nat_gateway" "nat" {
   allocation_id = aws_eip.nat_eip.id
-  subnet_id     = aws_subnet.public_subnets["public-1a"].id  # Ensure "public-1" exists in var.public_subnets
+  subnet_id     = aws_subnet.public_subnets["public-1a"].id # Ensure "public-1" exists in var.public_subnets
 
   tags = {
     Name = "${var.environment_name}-nat-gateway"
